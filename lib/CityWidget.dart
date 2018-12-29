@@ -56,7 +56,12 @@ class CityState extends State<CityWidget> {
             title: GestureDetector(
               child: Text(cityList[index].cityName),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => WeatherWidget(cityList[index].cityName)));
+                //跳转方法1
+//                Navigator.push(context, MaterialPageRoute(builder: (context) => WeatherWidget(cityList[index].cityName)));
+                //跳转方法2
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return new WeatherWidget(cityList[index].cityName);
+                }));
               },
             ),
           );
